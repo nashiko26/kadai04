@@ -1,5 +1,9 @@
+// キー：todolist（固定）
+// バリュー：JSON文字列（配列をJSON文字列化したもの）
+
 // 初期化処理としてToDoを画面に表示
 renderToDoList();
+
 // フォームの情報を元にToDoを保存
 function addToDo() {
   let input = document.getElementById("name").value;
@@ -29,7 +33,8 @@ function deleteToDo() {
   deleteStorage(this.dataset.index);
   renderToDoList();
 }
-// ローカルストレージ操作関数群
+
+// ローカルストレージ操作する
 function getStorage() {
   let list = localStorage.getItem("ToDoList");
   if (list === null) {
